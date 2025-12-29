@@ -1,0 +1,19 @@
+Bit.ly
+
+Functional Requirement :
+
+1. Users should be able to submit a long URL and receive a shortened version.
+2. Optionally, users should be able to specify a custom alias for their shortened URL (ie. "www.short.ly/my-custom-alias")
+3. Optionally, users should be able to specify an expiration date for their shortened URL.
+4. Users should be able to access the original URL by using the shortened URL.
+
+Non Functional Requirement :
+
+1. The system should ensure uniqueness for the short codes (no two long URLs can map to the same short URL)
+2. The redirection should occur with minimal delay (< 100ms)
+3. The system should be reliable and available 99.99% of the time (availability > consistency)
+4. The system should scale to support 1B shortened URLs and 100M DAU
+
+
+Important Point to remember :
+An important consideration in this system is the significant imbalance between read and write operations. The read-to-write ratio is heavily skewed towards reads, as users frequently access shortened URLs, while the creation of new short URLs is comparatively rare. For instance, we might see 1000 clicks (reads) for every 1 new short URL created (write). This asymmetry will significantly impact our system design, particularly in areas such as caching strategies, database choice, and overall architecture.
