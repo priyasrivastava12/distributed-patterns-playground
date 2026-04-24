@@ -2,6 +2,10 @@ Great question — this is **core to ticket booking system design** (like BookMy
 
 ---
 
+https://chatgpt.com/share/69eb3fcc-faf8-8322-b0c1-c818afd1f593
+
+
+
 # 🔒 1. How to ensure *same user* completes checkout (and not others)?
 
 You don’t “lock the user” — you **lock the seat(s)** temporarily.
